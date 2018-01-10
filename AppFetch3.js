@@ -57,9 +57,15 @@ export default class ApiList extends Component {
 
     // 渲染每行数据
     renderRow(rowData) {
-        var imgUri = 'http://119.23.57.155:82/origami/images/'+rowData.IMAGE_NAME;
+        // 方式一
+        let source = {uri: 'http://119.23.57.155:82/origami/images/'+rowData.IMAGE_NAME};
         return (
-            <Image source={{uri: imgUri}} style={{width: 100, height: 100}} />
+            <Image source={source} style={{width: 100, height: 100}} />
         )
+        // 方式二
+        // var imgUri = 'http://119.23.57.155:82/origami/images/'+rowData.IMAGE_NAME;
+        // return (
+        //     <Image source={{uri: imgUri}} style={{width: 100, height: 100}} />
+        // )
     }
 }
